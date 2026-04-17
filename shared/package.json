@@ -1,9 +1,0 @@
-{
-  "name": "@pinpon/shared",
-  "version": "1.0.0",
-  "type": "module",
-  "main": "src/index.js",
-  "scripts": {
-    "build": "node -e \"console.log('shared build ok')\""
-  }
-}
