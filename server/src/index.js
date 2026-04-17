@@ -3,6 +3,8 @@ import { env } from "./config/env.js";
 
 const app = createApp();
 
-app.listen(env.port, () => {
-  console.log(`API listening on http://localhost:${env.port}/api`);
+const PORT = process.env.PORT || env.port || 3000;
+
+app.listen(PORT, () => {
+  console.log(`API listening on http://localhost:${PORT}/api`);
 });
