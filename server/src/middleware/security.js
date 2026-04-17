@@ -1,0 +1,37 @@
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import csrf from "csurf";
+import express from "express";
+import rateLimit from "express-rate-limit";
+import helmet from "helmet";
+import morgan from "morgan";
+import { env } from "../config/env.js";
+
+export const applySecurity = (app) => {
+  app.use(helmet());
+  app.use(
+    cors({
+      origin: env.clientUrl,
+      credentials: true
+    })
+  );
+  app.use(morgan("dev"));
+  app.use(express.json({ limit: "1mb" }));
+  app.use(cookieParser(env.cookieSecret));
+  app.use(
+    rateLimit({
+      windowMs: 15 * 60 * 1000,
+      limit: 200,
+      standardHeaders: true,
+      legacyHeaders: false
+    })
+  );
+};
+
+export const csrfProtection = csrf({
+  cookie: {
+    httpOnly: true,
+    sameSite: "lax",
+    secure: false
+  }
+});
