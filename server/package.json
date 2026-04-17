@@ -6,9 +6,11 @@
   "scripts": {
     "predev": "prisma generate --schema prisma/schema.prisma && prisma db push --schema prisma/schema.prisma && node prisma/seed.js",
     "dev": "nodemon src/index.js",
-    "build": "node -e \"console.log('server build ok')\"",
     "seed": "node prisma/seed.js",
     "lint": "node -e \"console.log('server lint ok')\""
+     "start": "node src/index.js",
+  "build": "prisma generate"
+}
   },
   "dependencies": {
     "@pinpon/shared": "file:../shared",
