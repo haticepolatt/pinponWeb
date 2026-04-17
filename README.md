@@ -1,4 +1,4 @@
-# PinPon Akademi
+# Masa Tenisi Akademi
 
 Turkce, mobil uyumlu ve rol bazli tam yigin masa tenisi antrenman merkezi uygulamasi.
 
@@ -21,11 +21,6 @@ npx prisma generate --schema server/prisma/schema.prisma
 npm run seed
 npm run dev
 ```
-
-Uygulama adresleri:
-
-- Frontend: `http://127.0.0.1:5174`
-- Backend: `http://127.0.0.1:4000/api`
 
 ## Demo Hesaplari
 
