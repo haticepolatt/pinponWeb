@@ -32,6 +32,6 @@ export const csrfProtection = csrf({
   cookie: {
     httpOnly: true,
     sameSite: "lax",
-    secure: false
+    secure: process.env.NODE_ENV === "production"
   }
 });
