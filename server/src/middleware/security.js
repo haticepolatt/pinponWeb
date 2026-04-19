@@ -8,7 +8,18 @@ import morgan from "morgan";
 import { env } from "../config/env.js";
 
 export const applySecurity = (app) => {
-  app.use(helmet());
+  app.use(helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        imgSrc: ["'self'", "data:", "https://images.unsplash.com"],
+        connectSrc: ["'self'", env.clientUrl],
+        scriptSrc: ["'self'", "'unsafe-inline'"],
+        styleSrc: ["'self'", "'unsafe-inline'"],
+        fontSrc: ["'self'", "data:"],
+      }
+    }
+  }));
   app.use(
     cors({
       origin: env.clientUrl,
