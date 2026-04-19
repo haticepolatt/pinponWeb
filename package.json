@@ -8,6 +8,7 @@
     "shared"
   ],
   "scripts": {
+    "start": "npm run build -w client && node server/src/index.js",
     "postinstall": "npx prisma generate --schema server/prisma/schema.prisma",
     "dev": "concurrently \"npm run dev -w server\" \"npm run dev -w client\"",
     "build": "npm run build -w shared && npm run build -w server && npm run build -w client",
