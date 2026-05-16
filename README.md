@@ -22,13 +22,6 @@ npm run seed
 npm run dev
 ```
 
-## Demo Hesaplari
-
-- Admin: `admin@pinponakademi.com` / `Admin123!`
-- Antrenor 1: `selim@pinponakademi.com` / `Trainer123!`
-- Antrenor 2: `ece@pinponakademi.com` / `Trainer123!`
-- Ogrenci: `oyuncu@pinponakademi.com` / `Student123!`
-
 ## Ozellikler
 
 - JWT access + refresh token sistemi
